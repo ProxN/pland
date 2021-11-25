@@ -1,9 +1,9 @@
 import { graphql } from 'graphql';
 import { Maybe } from 'graphql/jsutils/Maybe';
 import { buildSchema } from 'type-graphql';
-import { RedisMock } from './testConnection';
+import { RedisMock } from './test-connection';
 import { resolvers } from '../api';
-import authChecker from './authChecker';
+import authChecker from './auth-checker';
 
 interface Options {
   source: string;

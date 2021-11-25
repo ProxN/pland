@@ -4,12 +4,14 @@ import { checkEmpty, isEmail } from '../../lib/helpers';
 import { WEB_URL } from '../../lib/config';
 import { Mailer } from '../../lib/mailer';
 import { Context } from '../../types/context';
-import User from '../user/user.entity';
-import { FieldError } from '../shared/errorResponse';
-import { UserResponse } from '../shared/user.response';
-import * as authErrors from './auth.errors';
-import { LoginInputs, SignupInputs } from './inputs/auth.input';
-import { ForgotPassResponse } from './response';
+import User from '../user/user-entity';
+import { UserResponse, FieldError } from '../../types/shared';
+import {
+  SignupInputs,
+  LoginInputs,
+  ForgotPassResponse,
+} from '../../types/auth';
+import * as authErrors from './auth-errors';
 
 const validateAuth = (email: string, password: string) => {
   if (!isEmail(email)) {

@@ -6,6 +6,7 @@ import express from 'express';
 import session from 'express-session';
 import { buildSchema } from 'type-graphql';
 import { ApolloServer } from 'apollo-server-express';
+import expressPlayground from 'graphql-playground-middleware-express';
 import cookieParser from 'cookie-parser';
 import connectRedis from 'connect-redis';
 import Redis from 'ioredis';
@@ -16,7 +17,7 @@ import helmet from 'helmet';
 import depthLimit from 'graphql-depth-limit';
 import connection from './conn';
 import { resolvers } from './api';
-import authChecker from './lib/authChecker';
+import authChecker from './lib/auth-checker';
 import { logger } from './lib/logger';
 import {
   CORS_ORIGIN,
@@ -44,7 +45,7 @@ const Main = async () => {
   const redis = new Redis('127.0.0.1:6379');
 
   app.set('trust proxy', 1);
-  app.use(helmet());
+  app.use(helmet({ contentSecurityPolicy: IS_PROD ? undefined : false }));
   app.use(
     cors({
       origin: [CORS_ORIGIN, 'http://localhost:3000'],
@@ -87,6 +88,7 @@ const Main = async () => {
 
   await apolloServer.start();
 
+  app.get('/graphql', expressPlayground({ endpoint: '/graphql' }));
   apolloServer.applyMiddleware({ app, cors: false });
 
   app.listen(PORT, () => logger.info(`> Ready on http://localhost:${PORT}`));

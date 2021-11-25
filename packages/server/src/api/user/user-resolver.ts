@@ -1,10 +1,9 @@
 import { Arg, Authorized, Ctx, Mutation, Query, Resolver } from 'type-graphql';
 import { Context } from '../../types/context';
-import { UserResponse } from '../shared/user.response';
-import * as userErrors from './user.errors';
-import { UpdateUserInput } from './inputs/updateUser.input';
-import User from './user.entity';
-import { UpdatePassResponse } from './response/updatePass.response';
+import * as userErrors from './user-errors';
+import User from './user-entity';
+import { UpdatePassResponse, UpdateUserInput } from '../../types/user';
+import { UserResponse } from '../../types/shared';
 
 @Resolver()
 class UserResolver {
