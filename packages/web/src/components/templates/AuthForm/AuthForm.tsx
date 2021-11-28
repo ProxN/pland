@@ -33,15 +33,20 @@ const AuthForm: React.FC<AuthFormProps> = ({
   onSubmit,
 }) => {
   return (
-    <Center minH='100vh'>
-      <Box w={{ xs: '100%', sm: '40rem' }}>
+    <Center minH='100vh' backgroundColor='gray.0'>
+      <Box
+        w={{ xs: '100%', sm: '40rem' }}
+        bg='white'
+        padding='4.5rem 3.5rem'
+        borderRadius='md'
+        boxShadow='sm'
+      >
         <Heading as='h1' size='3xl'>
           {title}
         </Heading>
-        <Box as='form' mt={3} w='100%' onSubmit={onSubmit}>
-          <Space size={2} flexDirection='column'>
+        <Box as='form' mt={6} w='100%' onSubmit={onSubmit}>
+          <Space size={3} flexDirection='column'>
             {children}
-
             {hideLinks ? (
               ''
             ) : page === 'forgot_password' ? (

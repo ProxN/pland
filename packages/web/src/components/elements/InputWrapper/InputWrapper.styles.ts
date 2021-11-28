@@ -11,7 +11,7 @@ export const Required = styled.span`
 `;
 
 export const Label = styled.label`
-  font-weight: 600;
+  font-weight: 500;
   font-size: sm;
   display: block;
   margin-bottom: 0.6rem;

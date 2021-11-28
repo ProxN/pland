@@ -48,7 +48,7 @@ const Index = () => {
         ) : (
           <Box>
             <Heading as='h1' size={{ xs: '3xl', md: '4xl' }}>
-              Welcome to the Fullstack boilerplate
+              Welcome to pland
             </Heading>
             <Space mt='1rem' justifyContent='center'>
               <Link passHref href='/login'>
@@ -57,7 +57,7 @@ const Index = () => {
                 </Button>
               </Link>
               <Link passHref href='/signup'>
-                <Button as='a' color='violet'>
+                <Button as='a' isPrimary>
                   Sign up
                 </Button>
               </Link>
