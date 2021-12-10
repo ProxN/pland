@@ -40,7 +40,7 @@ interface AppTheme extends ITheme, XStyledDefaultTheme {
   fontFamily: string;
   colors: Record<string, Tuple<string, 10>>;
   fontSizes: Record<FontSizes, string | number>;
-  radii: ThemeSize;
+  radii: ThemeSize | number;
   shadows: ThemeSize;
   screens: ThemeSize;
   space: SpaceType;

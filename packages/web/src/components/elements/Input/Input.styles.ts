@@ -193,5 +193,6 @@ export const InputIcon = styled.div`
   z-index: 1;
   pointer-events: none;
   width: 3.4rem;
+  font-size: 1.6rem;
   opacity: 0.5;
 `;

@@ -39,7 +39,7 @@ const Login = () => {
         queryClient.setQueryData<MeQuery>(['Me', null], {
           me: data.signin.user,
         });
-        Router.push('/');
+        Router.push('/home');
       }
     },
   });

@@ -6,11 +6,13 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import bcrypt from 'bcrypt';
 import crypto from 'crypto';
+import Workspace from '../workspace/workspace-entity';
 
 @ObjectType()
 @Entity()
@@ -29,6 +31,9 @@ class User extends BaseEntity {
 
   @Column()
   password!: string;
+
+  @OneToMany(() => Workspace, (workspace) => workspace.owner)
+  owned_workspaces?: Workspace[];
 
   @Field(() => String)
   @CreateDateColumn()

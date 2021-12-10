@@ -1,2 +1,2 @@
 export { LoginInputs, SignupInputs } from './auth-input';
-export { ForgotPassResponse } from './forgotpass-response';
+export { ForgotPassResponse } from './auth-response';

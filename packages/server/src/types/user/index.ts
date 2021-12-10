@@ -1,2 +1,2 @@
-export { UpdatePassResponse } from './updatepass-response';
-export { UpdateUserInput } from './updateuser-input';
+export { UpdatePassResponse } from './user-response';
+export { UpdateUserInput } from './user-input';
